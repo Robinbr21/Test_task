@@ -3,7 +3,11 @@ import xlsx from 'xlsx'
 import mysql from "mysql2"
 import moment from 'moment';
 import redis from 'redis';
-const client = redis.createClient();
+
+const client = redis.createClient({
+  host: process.env.REDIS_HOST,
+  port: process.env.REDIS_PORT
+});
 
 export const index = async (req, res) => {
 
