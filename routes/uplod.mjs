@@ -22,6 +22,7 @@ const upload = multer({ storage: storage });
 const router = Router()
 console.log("inside the upload router");
 router.get('/',uploadcontroller.index);
+router.get('/redis',uploadcontroller.redis);
 
 
 export default router
